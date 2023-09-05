@@ -1,3 +1,2 @@
 #!/bin/bash
-sed -n 'p;n' < input.txt
-
+paste -- | cut -d$'\t' -fl
