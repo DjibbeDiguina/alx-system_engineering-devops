@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -mirdegth 1 -type d | wC -l
+find . -mindepth 1 -type d | wC -l
