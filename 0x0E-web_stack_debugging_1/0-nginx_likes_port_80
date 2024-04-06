@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Check if Nginx is installed
+if ! command -v nginx &> /dev/null; then
+    echo "Nginx is not installed. Installing..."
+    apt-get update
+    apt-get install nginx -y
+fi
+
+# Check Nginx configuration to ensure it's listening on port 80
+if ! grep -q "listen 80;" /etc/nginx/sites-available/default; then
+    echo "Configuring Nginx to listen on port 80..."
+    sed -i 's/listen [::]:80 default_server;/listen 80 default_server;/' /etc/nginx/sites-available/default
+fi
+
+# Check if port 80 is already in use
+if ss -tuln | grep ':80 ' &> /dev/null; then
+    echo "Port 80 is already in use. Terminating processes..."
+    fuser -k 80/tcp
+fi
+
+# Restart Nginx to apply changes
+echo "Restarting Nginx service..."
+service nginx restart
+
+# Verify Nginx is now listening on port 80
+if ss -tuln | grep ':80 ' &> /dev/null; then
+    echo "Nginx is now listening on port 80."
+else
+    echo "Failed to configure Nginx to listen on port 80."
+fi
+
