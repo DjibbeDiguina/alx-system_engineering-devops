@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script configures Nginx to listen on port 80
+# Script to configure Nginx to listen on port 80
 
 apt update
 apt install -y nginx
