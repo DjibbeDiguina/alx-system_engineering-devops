@@ -1,6 +1,9 @@
+#!/usr/bin/env bash
+# This script configures Nginx to listen on port 80
+
 apt update
 apt install -y nginx
 sed -i 's/listen [::]:80 default_server;/listen 80 default_server;/' /etc/nginx/sites-available/default
-fuser -k 80/tcp
+nginx -t
 nginx -g 'daemon off;'
 
