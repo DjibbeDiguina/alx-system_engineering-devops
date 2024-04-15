@@ -51,7 +51,7 @@ COMMIT
 -A ufw-before-input -p udp --sport 67 --dport 68 -j ACCEPT
 
 #
-# ufw-not-local
+#ufw-not-local
 #
 -A ufw-before-input -j ufw-not-local
 
