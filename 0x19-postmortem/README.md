@@ -22,3 +22,32 @@ Schedule regular database maintenance tasks to purge temporary data and optimize
 Conduct a post-mortem meeting to analyze the outage response and identify further areas for improvement in incident management procedures.
 By implementing these measures, we aim to proactively identify and address potential issues before they impact service availability, ensuring a more resilient and reliable web application for our users.
 
+
+🚨🔥 The Great Disk Space Debacle: A Post-Mortem Tale 🔥🚨
+Issue Summary:
+Duration: The wild ride lasted from 10:00 AM to 2:00 PM on May 8th, 2024 (UTC).
+Impact: Brace yourselves! Our web app took an unplanned siesta, leaving users stranded in the digital desert with no access. 100% downtime, folks!
+Root Cause: Turns out, our database server played a game of Tetris with its disk space and lost, thanks to an overzealous accumulation of log files.
+Timeline:
+9:55 AM: Monitoring alarms screamed louder than a toddler with a kazoo, alerting us to the impending doom of slow database responses.
+10:00 AM: Engineers dashed into action like caffeinated squirrels, initially hunting for network gremlins and server hiccups.
+10:30 AM: We briefly danced with the idea that recent code changes pulled the rug under our servers. Spoiler alert: it didn't.
+11:00 AM: Raised the bat signal... I mean, escalated the incident to the tech superheroes for backup.
+12:00 PM: Unveiled the villain: disk space exhaustion due to log file overpopulation.
+12:30 PM: Armed with virtual brooms, we swept away the digital dust bunnies, freeing up precious disk space.
+2:00 PM: The skies cleared, birds sang, and our web app emerged from its digital hibernation, fresh and sprightly.
+Root Cause and Resolution:
+Root Cause: Our database server embraced its inner hoarder, stuffing itself with more log files than a teenager's backpack.
+Resolution: We played digital Marie Kondo, decluttering the server by ruthlessly purging unnecessary log files and restoring order to the disk space chaos.
+Corrective and Preventative Measures:
+Improvements: To avoid future dumpster fires, we're implementing automated disk space monitoring and scheduling regular log file purges.
+Tasks to Address the Issue:
+Install disk space monitoring tools faster than a squirrel hoards nuts.
+Fine-tune logging practices to prevent log file bloat, because nobody likes a digital packrat.
+Set up scheduled server clean-up parties to keep disk space clutter-free.
+Host a post-mortem party (with virtual cake) to dissect the incident and concoct more devious prevention plans.
+Conclusion:
+While our web app briefly played hide-and-seek with users, we emerged stronger and wiser, armed with brooms and disk space monitoring tools. Here's to smoother sailing in the digital seas ahead!
+Stay tuned for more adventures from the tech trenches, where every outage is a chance to shine brighter than a server rack on fire! 🔥💻✨
+
+
